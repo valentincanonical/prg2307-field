@@ -1,0 +1,1 @@
+docker run --privileged -it -v $PWD:/workdir rockcraft

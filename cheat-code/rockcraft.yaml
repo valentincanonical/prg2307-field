@@ -8,8 +8,9 @@ base: bare
 build-base: ubuntu:22.04
 platforms:
   amd64:
-  
+
 run-user: _daemon_
+
 services:
   http:
     override: replace

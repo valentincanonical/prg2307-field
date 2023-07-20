@@ -1,0 +1,16 @@
+[Unit]
+Description=Rockcraft entrypoint systemd service
+Wants=snapd.seeded.service
+After=snapd.service snapd.socket snapd.seeded.service
+
+[Service]
+ExecStart=/bin/bash /usr/local/bin/entrypoint.sh
+Environment=PATH="/snap/bin:/usr/bin:/usr/local/bin:/bin:/usr/sbin:/sbin"
+Restart=no
+Type=simple
+StandardOutput=tty
+StandardError=tty
+WorkingDirectory=/workdir
+
+[Install]
+WantedBy=default.target
