@@ -1,0 +1,25 @@
+name: http
+summary: a Golang HTTP client example
+description: a Golang HTTP client example
+version: "1.0" 
+license: Apache-2.0
+
+base: bare
+build-base: ubuntu:22.04
+platforms:
+  amd64:
+
+# services:
+#   http:
+#     override: replace
+#     startup: enabled
+#     command: /
+
+parts:
+  app:
+    plugin: go
+    source: src
+    build-snaps:
+      - go/stable
+    # override-build: |
+    #   go build http.go

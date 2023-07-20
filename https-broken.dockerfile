@@ -1,6 +1,4 @@
-ARG UBUNTU_RELEASE=22.04
-
-FROM public.ecr.aws/lts/ubuntu:${UBUNTU_RELEASE} as base
+FROM public.ecr.aws/lts/ubuntu:22.04 as base
 RUN apt-get update && apt-get install -y ca-certificates
 
 FROM base AS gobuilder
